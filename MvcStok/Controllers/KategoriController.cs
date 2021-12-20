@@ -33,5 +33,33 @@ namespace MvcStok.Controllers
             return View();
            
         }
+
+        public ActionResult SIL(int id)
+        {
+            var kategori = db.TBLKATEGORILER.Find(id);
+            db.TBLKATEGORILER.Remove(kategori);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult GUNCELLE(int id)
+        {
+            var degerler = db.TBLKATEGORILER.Find(id);
+            return View(degerler);
+            
+
+        }
+        [HttpPost]
+        public ActionResult GUNCELLE()
+        {
+       
+            //ViewBag.degerler = degerler;
+            
+
+
+
+
+            return RedirectToAction("index");
+        }
     }
 }
