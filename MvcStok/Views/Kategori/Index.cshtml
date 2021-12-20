@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<h2>Burası Kategori Sayfası</h2>
+
+
+
+
+    <table class="table table-bordered">
+       
+            <tr>
+                <th>KATEGORİ ID</th>
+                <th>KATEGORİ ADI</th>
+                <th>SİLME</th>
+                <th>GÜNCELLE</th>
+
+            </tr>      
+            <tbody>
+                @foreach (var item in ViewBag.degerler as List<MvcStok.Models.Entity.TBLKATEGORILER>)
+                {
+                    <tr>
+                        <td>@item.KATEGORIID</td>
+                        <td>@item.KATEGORIAD</td>
+                        <td><a href="/KATEGORI/SIL/@item.KATEGORIID" class="btn btn-danger">SİL</a></td>
+                        <td><a href="/KATEGORI/GUNCELLE/@item.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
+                        
+                    </tr>
+                    
+                }
+                </tbody>
+    </table>
+<a href="/KATEGORI/YeniKategori" class="btn btn-primary"> YENİ KATEGORİ EKLE</a>
+
