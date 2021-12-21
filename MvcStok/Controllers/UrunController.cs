@@ -68,7 +68,7 @@ namespace MvcStok.Controllers
 
             var urn = db.TBLURUNLER.Find(p1.URUNID);
             var ktgr = db.TBLKATEGORILER.Where(m => m.KATEGORIID == p1.TBLKATEGORILER.KATEGORIID).FirstOrDefault();
-            p1.TBLKATEGORILER = ktgr;
+            //p1.TBLKATEGORILER = ktgr;
             urn.URUNKATEGORI = ktgr.KATEGORIID;
             urn.URUNADI = p1.URUNADI;
             urn.FIYAT = p1.FIYAT;
