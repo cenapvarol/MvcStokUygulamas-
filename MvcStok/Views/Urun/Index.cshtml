@@ -1,4 +1,6 @@
-﻿
+﻿@using MvcStok.Models.Entity
+@model  List<TBLURUNLER>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -24,17 +26,17 @@
     </tr>
     
     <tbody>
-        @foreach (var item in ViewBag.degerler as List<MvcStok.Models.Entity.TBLURUNLER>)
+        @foreach (var urn in Model)
         {
         <tr>
-            <td>@item.URUNID</td>
-            <td>@item.URUNADI</td>
-            <td>@item.TBLKATEGORILER.KATEGORIAD</td>
-            <td>@item.FIYAT</td>
-            <td>@item.MARKA</td>
-            <td>@item.STOK</td>
-            <td><a href="/URUN/SIL/@item.URUNID" class="btn btn-danger">SİL</a></td>
-            <td><a href="/URUN/GUNCELLE/@item.URUNID" class="btn btn-success">GÜNCELLE</a></td>
+            <td>@urn.URUNID </td>
+            <td>@urn.URUNADI</td>
+            <td>@urn.TBLKATEGORILER.KATEGORIAD</td>
+            <td>@urn.FIYAT</td>
+            <td>@urn.MARKA</td>
+            <td>@urn.STOK</td>
+            <td><a href="/URUN/SIL/@urn.URUNID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/URUN/UrunGuncelle/@urn.URUNID" class="btn btn-success">GÜNCELLE</a></td>
         </tr>
 
 

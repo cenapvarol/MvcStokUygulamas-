@@ -41,25 +41,20 @@ namespace MvcStok.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        [HttpGet]
-        public ActionResult GUNCELLE(int id)
-        {
-            var degerler = db.TBLKATEGORILER.Find(id);
-            return View(degerler);
-            
 
+        public ActionResult KategoriGuncelle(int id)
+        {
+            var ktgr = db.TBLKATEGORILER.Find(id);
+
+
+            return View("KategoriGuncelle",ktgr);
         }
-        [HttpPost]
-        public ActionResult GUNCELLE()
+        public ActionResult Guncelle(TBLKATEGORILER p1)
         {
-       
-            //ViewBag.degerler = degerler;
-            
-
-
-
-
-            return RedirectToAction("index");
+            var ktgr = db.TBLKATEGORILER.Find(p1.KATEGORIID);
+            ktgr.KATEGORIAD = p1.KATEGORIAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
