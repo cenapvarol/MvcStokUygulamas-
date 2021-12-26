@@ -112,7 +112,6 @@ D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\Antlr3.Runtime.pdb
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\obj\Debug\MvcStok.csproj.AssemblyReference.cache
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\obj\Debug\MvcStok.csproj.CoreCompileInputs.cache
-D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\obj\Debug\MvcStok.csproj.CopyComplete
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\obj\Debug\MvcStok.dll
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\obj\Debug\MvcStok.pdb
 D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\roslyn\csc.exe
