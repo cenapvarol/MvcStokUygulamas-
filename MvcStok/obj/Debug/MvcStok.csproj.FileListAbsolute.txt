@@ -246,3 +246,7 @@ D:\EgitimProjeleri\MvcStokUygulamasi\MvcStok\obj\Debug\MvcStok.csproj.CoreCompil
 D:\EgitimProjeleri\MvcStokUygulamasi\MvcStok\obj\Debug\MvcStok.csproj.CopyComplete
 D:\EgitimProjeleri\MvcStokUygulamasi\MvcStok\obj\Debug\MvcStok.dll
 D:\EgitimProjeleri\MvcStokUygulamasi\MvcStok\obj\Debug\MvcStok.pdb
+D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\PagedList.dll
+D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\PagedList.Mvc.dll
+D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\PagedList.xml
+D:\EgitimProjeleri\MvcStokUygulaması\MvcStok\bin\PagedList.Mvc.xml

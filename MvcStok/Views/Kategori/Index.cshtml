@@ -1,4 +1,10 @@
-﻿
+﻿@using MvcStok.Models.Entity
+@model PagedList.IPagedList<TBLKATEGORILER>
+@using PagedList
+@using PagedList.Mvc
+
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -12,28 +18,50 @@
 
 
 
-    <table class="table table-bordered">
-       
-            <tr>
-                <th>KATEGORİ ID</th>
-                <th>KATEGORİ ADI</th>
-                <th>SİLME</th>
-                <th>GÜNCELLE</th>
+<table class="table table-bordered">
 
-            </tr>      
-            <tbody>
-                @foreach (var item in ViewBag.degerler as List<MvcStok.Models.Entity.TBLKATEGORILER>)
-                {
-                    <tr>
-                        <td>@item.KATEGORIID</td>
-                        <td>@item.KATEGORIAD</td>
-                        <td><a href="/KATEGORI/SIL/@item.KATEGORIID" class="btn btn-danger">SİL</a></td>
-                        <td><a href="/KATEGORI/KategoriGuncelle/@item.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
-                        
-                    </tr>
-                    
-                }
-                </tbody>
-    </table>
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİLME</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @*ikinci yöntem*@
+    @*<tbody>
+            @foreach (var item in Model)
+
+            {
+                <tr>
+                    <td>@item.KATEGORIID</td>
+                    <td>@item.KATEGORIAD</td>
+                    <td><a href="/KATEGORI/SIL/@item.KATEGORIID" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/KATEGORI/KategoriGuncelle/@item.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
+
+                </tr>
+
+            }
+        </tbody>*@
+    <tbody>
+        @foreach (var item in ViewBag.degerler as PagedList.IPagedList<MvcStok.Models.Entity.TBLKATEGORILER>)
+
+        {
+            <tr>
+                <td>@item.KATEGORIID</td>
+                <td>@item.KATEGORIAD</td>
+                <td><a href="/KATEGORI/SIL/@item.KATEGORIID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/KATEGORI/KategoriGuncelle/@item.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)ViewBag.degerler as PagedList.IPagedList<MvcStok.Models.Entity.TBLKATEGORILER>, sayfa => Url.Action("Index", new { sayfa }))
+ 
+
+@*İkinci yöntem*@
+@*@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))*@
+
 <a href="/KATEGORI/YeniKategori" class="btn btn-primary"> YENİ KATEGORİ EKLE</a>
 

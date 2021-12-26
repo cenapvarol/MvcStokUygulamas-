@@ -5,6 +5,13 @@
 }
 
 <h2>Müşteri Ekranı</h2>
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+            {
+<p>
+    Aranacak Müşteri Adı: @Html.TextBox("p")
+    <button type="submit">Ara</button>
+</p>
+            }
 <table class="table table-bordered">
    
     <tr>
@@ -21,8 +28,10 @@
             <td>@item.MUSTERIID</td>
             <td>@item.MUSTERIAD</td>
             <td>@item.MUSTERISOYAD</td>
-            <td><a href="/MUSTERI/SIL/@item.MUSTERIID" class="btn btn-danger">SİL</a></td>
+            <td> @Html.ActionLink("SIL", "SIL", new { id = item.MUSTERIID }, new { @class = "btn btn-danger", onclick = "return confirm('Kullanıcıyı Silmek İstiyormusunuz?')" })</td>
+            @*<td><a href="/MUSTERI/SIL/@item.MUSTERIID" class="btn btn-danger">SİL</a></td>*@
             <td><a href="/MUSTERI/MusteriGuncelle/@item.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
+
 
         </tr>
         }
@@ -30,5 +39,6 @@
     </tbody>
 
 </table>
+
 <a href="/MUSTERI/YeniMusteri" class="btn btn-primary"> YENİ MUSTERI EKLE</a>
 

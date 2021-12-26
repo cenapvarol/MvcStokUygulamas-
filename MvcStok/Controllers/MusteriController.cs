@@ -11,10 +11,16 @@ namespace MvcStok.Controllers
     {
         // GET: Musteri
         MvcDbStokEntities db = new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var degerler = db.TBLMUSTERILER.ToList();
-            ViewBag.degerler = degerler;
+            if (!string.IsNullOrEmpty(p))
+            {
+               degerler = degerler.Where(m=>m.)
+
+            }
+            var degerler = from d in db.TBLMUSTERILER select d;
+            //var degerler = db.TBLMUSTERILER.ToList();
+            ViewBag.degerler = degerler.ToList();
             return View();
         }
         [HttpGet]
@@ -32,10 +38,11 @@ namespace MvcStok.Controllers
             }
             db.TBLMUSTERILER.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
-        public ActionResult SIL(int id)
+        public ActionResult SIL(int id, string confirm_value)
         {
+
             var musteri = db.TBLMUSTERILER.Find(id);
             db.TBLMUSTERILER.Remove(musteri);
             db.SaveChanges();

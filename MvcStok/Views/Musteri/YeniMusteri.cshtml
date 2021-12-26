@@ -10,14 +10,21 @@
     <div>
         <label>Müşteri Ad</label>
         @*<input type="text" class="form-control" name="MUSTERIAD" />*@
-        @Html.TextAreaFor(m=>m.MUSTERIAD,new {@class="form-control"})
+        @Html.TextBoxFor(m=>m.MUSTERIAD,new {@class="form-control"})
         @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new {@style ="color:green"})
     </div>
     <div>
         <label>Müşteri Soyad</label>
-        <input type="text" class="form-control" name="MUSTERISOYAD" />
+        @Html.TextBoxFor(m=>m.MUSTERISOYAD,new  {@class="form-control" })
+        @Html.ValidationMessageFor(m=>m.MUSTERISOYAD,"",new {@style="color:green"})
+        @*<input type="text" class="form-control" name="MUSTERISOYAD" />*@
     </div>
     <div style="margin-top:15px">
-        <button class="btn btn-info">Müsteri Ekle</button>
+        <button class="btn btn-info" id="btnMusteriEkle">Müsteri Ekle</button>
     </div>
+    <script>
+        $("#btnMusteriEkle").click(function () {
+            alert("Müşteri Ekleme İşlemi Yapıldı...!");
+        });
+    </script>
 </form>

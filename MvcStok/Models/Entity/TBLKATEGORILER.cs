@@ -22,7 +22,8 @@ namespace MvcStok.Models.Entity
         }
     
         public short KATEGORIID { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Kategori Ad Alaný Boþ Býrakýlamaz...")]
+        [StringLength(50,ErrorMessage ="Kategori Ad uzunluðu en fazla 50 karekter olmaýdýr...")]
         public string KATEGORIAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

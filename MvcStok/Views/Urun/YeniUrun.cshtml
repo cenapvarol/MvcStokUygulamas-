@@ -11,7 +11,7 @@
 <form class="form-group" method="post">
     <div>
         <label>Ürün Adı</label>
-        <input type="text" class="form-control" name="URUNADI" />
+        <input type="text" class="form-control" name="URUNADI" required=""maxlength="10" />
     </div>
     <div>
         <label>Ürün Kategori</label>
@@ -23,11 +23,11 @@
     </div>
     <div>
         <label>Ürün Marka</label>
-        <input type="text" class="form-control" name="MARKA" />
+        <input type="text" class="form-control" name="MARKA"  placeholder="Buraya Markayı Yazınız..." required=""/>
     </div>
     <div>
         <label>Ürün Stok</label>
-        <input type="number" class="form-control" name="STOK" />
+        <input type="number" class="form-control" name="STOK" required="" />
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-info">Ürün Ekle</button>
